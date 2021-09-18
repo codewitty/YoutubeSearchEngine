@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% block content%}
+<form action="" method="post">
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    <!-- String Field-->
+    <div class="form-group text-center">
+      <a href= {{url_for("input")}}> <img src = "static\logo.png"  width = "300" height = "300" style = "margin: 10px"  > </a>
+    </div>
+    <p style="text-align:center; font-size: 20px"><em> Find the videos you're looking for at the click of a button</em></p>
+    <div class="form-group text-center">
+      {{form.searchTerm.label(class = "form-control-label", id= "searchTerm")}}
+      {{form.searchTerm(placeholder = "Enter Search Term", class ="form-control-label", id =
+      "searchTerm", size = 50)}}
+
+      {{form.maxResults.label(class = "form-control-label", id = "maxResults")}}
+      {{form.maxResults(placeholder = "Enter Max Number of Results", class = "form-control-label", id =
+      "maxResults",size = 30)}}
+      <br>
+      {{form.submit(class = "submit-button")}}
+</form>
+{% endblock%}
