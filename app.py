@@ -82,8 +82,6 @@ def result(query, maxResults):
         }
         videos.append(video_data)
 
-    print(type(results[0]['snippet']['publishedAt']))
-
     for result in results:
         video_data = {
             'Title' : result['snippet']['title'] if 'title' in result['snippet'] else 'NONE',
@@ -117,4 +115,4 @@ def download():
                  "attachment; filename=search_results.csv"})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
