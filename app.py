@@ -1,14 +1,10 @@
 import pandas as pd
 from flask import Flask, render_template, request, redirect, url_for, Response
 import os
-from os.path import join, dirname
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 import requests
 from isodate import parse_duration
-from flask_wtf import FlaskForm
-from forms import Queryform, csrf
-from wtforms import StringField, IntegerField, ValidationError, SubmitField
-from wtforms.validators import InputRequired, NumberRange
+from forms import Queryform
 
 
 app = Flask(__name__)
