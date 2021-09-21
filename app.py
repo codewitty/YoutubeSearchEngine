@@ -82,12 +82,14 @@ def result(query, maxResults):
         }
         videos.append(video_data)
 
+    print(type(results[0]['snippet']['publishedAt']))
+
     for result in results:
         video_data = {
             'Title' : result['snippet']['title'] if 'title' in result['snippet'] else 'NONE',
             'Link' : f'https://www.youtube.com/watch?v={ result["id"] }',
             'Views' : result['statistics']['viewCount'] if 'viewCount' in result['statistics'] else 'NONE',
-            'Year' : result['snippet']['publishedAt'] if 'publishedAt' in result['snippet'] else 'NONE',
+            'Year' : result['snippet']['publishedAt'].split('-')[0] if 'publishedAt' in result['snippet'] else 'NONE',
             'Tags' : str1.join(result['snippet']['tags']) if 'tags' in result['snippet'] else 'NONE',
             'Description' : result['snippet']['description'] if 'description' in result['snippet'] else 'NONE',
             'Uploader Name' : result['snippet']['channelTitle'] if 'channelTitle' in result['snippet'] else 'NONE',
