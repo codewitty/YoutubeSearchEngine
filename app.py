@@ -19,6 +19,7 @@ class Config:
 
 c = Config()
 key = c.API_KEY
+print(key)
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
