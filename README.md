@@ -1,7 +1,7 @@
 # YoutubeSearchEngine 🎥🔍
 
 ## About 📖
-The YoutubeSearchEngine is a tool designed to search YouTube for videos based on a desired query, returning a list of thumbnails with easy access to YouTube. Additionally, it offers the functionality to download the metadata for each video as a CSV f&#8203;``【oaicite:2】``&#8203;&#8203;``【oaicite:1】``&#8203;ce】.
+The YoutubeSearchEngine is a tool designed to search YouTube for videos based on a desired query, returning a list of thumbnails with easy access to YouTube. Additionally, you can also download the metadata for each video as a CSV file.
 
 ## Use 🚀
 1. Enter your search query.
