@@ -8,14 +8,12 @@ The YoutubeSearchEngine is a tool designed to search YouTube for videos based on
 2. Browse through the list of video thumbnails.
 3. Optionally, download video metadata in CSV format for further analysis.
 
-## Installation 💻
-(Instructions for installation)
 
-## Contributing 🤝
-(Information on how to contribute to the project)
+## Contributing and Support 💡
+Contributions are welcome! For support, open an issue in the GitHub repository.
 
-## License 📄
-(Information about the licensing of the project)
+## License 📜
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
