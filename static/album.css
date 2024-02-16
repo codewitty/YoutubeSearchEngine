@@ -15,6 +15,16 @@
   margin-bottom: 0;
 }
 
+.instructions {
+  margin-top: 30px;
+}
+
+.container2 {
+  margin-top: 30px;
+  color: #800000;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
 .jumbotron-heading {
   font-weight: 300;
 }

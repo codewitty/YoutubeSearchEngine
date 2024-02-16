@@ -38,10 +38,11 @@
       <a href= {{url_for("index")}}><img src = "{{url_for('static', filename='logo.png')}}"  width = "300" height = "300" > </a>
     </div>
       <h1 class="jumbotron-heading">Search YouTube</h1>
-      <p class="lead text-muted">Get the top results on YouTube for your query!</p>
-      <p>
+      <p class="lead text-muted">Here are you search results, Enjoy!</p>
+      <a href="{{ url_for('index') }}" class="btn btn-primary">Return to Homepage</a>
+      <!-- <p>
         <div class="btn btn-primary my-2"> <a class="download_button" href="/downloadCSV">Download Results</a></div>
-     </p>
+     </p> -->
     </div>
   </section>
 

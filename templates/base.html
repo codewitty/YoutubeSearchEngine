@@ -24,6 +24,16 @@
           font-size: 3.5rem;
         }
       }
+
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .instructions ol li {
+        font-size: 0.8em; /* Adjust as needed */
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='album.css') }}" rel="stylesheet">
@@ -57,6 +67,21 @@
         <input type="submit" value="YouTube Search" class="btn btn-primary my-2">
       </p>
       </form>
+    </div>
+  </section>
+
+  <section class="instructions mt-5 footer">
+    <div class="container2">
+      <h5>Need a YouTube V3 API Key?</h5>
+      <ol>
+        <li>Go to the <a href="https://console.developers.google.com/">Google Developers Console</a>.</li>
+        <li>Select or create a new project.</li>
+        <li>Navigate to APIs & Services > Credentials either from Quick access or by using the search bar.</li>
+        <li>On the Credentials page, click Create credentials > API key.</li>
+        <li>Your new API key will appear in the dialog. You can restrict the key's usage to your project by clicking Restrict key and selecting the YouTube Data API v3 for this key.</li>
+        <li>Your API key is ready to use!</li>
+        <li>IMPORTANT: Although we don't store your API key, it's a good practice to regularly rotate keys or set quota limits to prevent misuse.</li>
+      </ol>
     </div>
   </section>
 
