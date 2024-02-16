@@ -17,14 +17,17 @@ The YoutubeSearchEngine is a tool designed to search YouTube for videos based on
 
 
 
-Coming Soon:
 
-- View and Download the metadata for each video as a PDF file.
 
 ## Use 🚀
 1. Enter your search query.
 2. Browse through the list of video thumbnails.
 3. Click the view button to be redirected to the YouTube video.
+
+
+## Future Enhancements:
+
+- View and Download the metadata for each video as a PDF file.
 
 
 ## Contributing and Support 💡
