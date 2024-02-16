@@ -1,8 +1,7 @@
 import pandas as pd
-from flask import Flask, render_template, request, redirect, url_for, Response
-import os
-from dotenv import load_dotenv
+from flask import abort, Flask, render_template, request, redirect, url_for, Response
 import requests
+import os
 from isodate import parse_duration
 from forms import Queryform
 
@@ -10,39 +9,29 @@ from forms import Queryform
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thecodex'
 
-# API key setup
-path = '/Users/joshuagomes/YouTube/.env/key.py'
-load_dotenv(dotenv_path=path,verbose=True)
-
-class Config:
-    API_KEY = os.environ.get("KEY")
-
-c = Config()
-key = c.API_KEY
-print(key)
-
 @app.route("/", methods=['GET', 'POST'])
 def index():
     form = Queryform()
     if request.method == 'POST':
         form = Queryform()
         if form.validate_on_submit():
-            return redirect(url_for("result", query=form.searchTerm.data, maxResults=form.maxResults.data))
+            return redirect(url_for("result", query=form.searchTerm.data, maxResults=form.maxResults.data, api_key=form.api_key.data ))
 
     return render_template("base.html", form=form)
 
-@app.route("/results/<string:query>/<int:maxResults>", methods=['GET', 'POST'])
+@app.route("/results/<string:query>/<int:maxResults>/<string:api_key>", methods=['GET', 'POST'])
 #@app.route("/results", methods=['GET', 'POST'])
-def result(query, maxResults):
+def result(query, maxResults, api_key):
     search_url = 'https://www.googleapis.com/youtube/v3/search'
     video_url = 'https://www.googleapis.com/youtube/v3/videos'
 
     videos = []
     max_num = maxResults
     query = query
+    key = api_key
 
     search_params = {
-        'key' : key,
+        'key' : api_key,
         'q' : query,
         'part' : 'snippet',
         'maxResults' : max_num,
@@ -57,6 +46,8 @@ def result(query, maxResults):
     video_ids = []
     for result in results:
         video_ids.append(result['id']['videoId'])
+
+    print("Key: ", api_key)
 
     video_params = {
         'key' : key,
@@ -94,9 +85,15 @@ def result(query, maxResults):
         excel_list.append(video_data)
 
 
+    print(excel_list)
     df = pd.DataFrame(excel_list)
     print(df)
-    df.to_csv('./static/search_results.csv', sep='\t', encoding='utf-8', index=False)
+    print("Current working directory: ", os.getcwd())
+    try: 
+        df.to_csv('./static/search_results.csv', sep='\t', encoding='utf-8', index=False)
+    except Exception as e:
+        print("Error writing to CSV file: ", e)
+
     #df.to_excel('./static/search_results.xlsx', encoding='utf-8', index=False)
 
     return render_template('results.html', videos=videos)
@@ -111,5 +108,6 @@ def download():
         headers={"Content-disposition":
                  "attachment; filename=search_results.csv"})
 
+
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
