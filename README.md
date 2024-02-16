@@ -1,6 +1,9 @@
 # YoutubeSearchEngine 🎥🔍
 
-![Screen Shot 2021-09-17 at 5 58 44 PM](https://user-images.githubusercontent.com/35624908/133866855-be65523a-e789-4f75-8d74-ec9e6e17c58f.png)
+<img width="1906" alt="Screenshot 2024-02-16 at 12 10 49 AM" src="https://github.com/codewitty/YoutubeSearchEngine/assets/35624908/3e5d49a4-dca3-40e3-8b24-4534391c3289">
+
+![Screenshot 2024-02-16 at 12 11 12 AM](https://github.com/codewitty/YoutubeSearchEngine/assets/35624908/8fb61837-dc9b-4854-865f-0300beeccec4)
+
 
 ## Demo
 
