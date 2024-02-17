@@ -38,8 +38,6 @@ def result(query, maxResults):
     query = query
     api_key = os.getenv('API_KEY')
 
-    print("Key:", api_key)
-
     search_params = {
         'key' : api_key,
         'q' : query,
